@@ -1,0 +1,416 @@
+/* ===== Telegram Mini App Styles ===== */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    /* Telegram Theme Colors */
+    --tg-theme-bg-color: var(--tg-theme-bg-color, #ffffff);
+    --tg-theme-text-color: var(--tg-theme-text-color, #000000);
+    --tg-theme-hint-color: var(--tg-theme-hint-color, #999999);
+    --tg-theme-link-color: var(--tg-theme-link-color, #2481cc);
+    --tg-theme-button-color: var(--tg-theme-button-color, #2481cc);
+    --tg-theme-button-text-color: var(--tg-theme-button-text-color, #ffffff);
+
+    /* Custom Colors */
+    --color-beige: #F5EFE7;
+    --color-pink: #FFD6E8;
+    --color-brown: #8B6F47;
+    --color-cream: #FFF8F0;
+    --color-dark-brown: #5C4033;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+html,
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    padding-bottom: 80px;
+    /* Space for MainButton */
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
+}
+
+/* ===== Header ===== */
+.app-header {
+    background: linear-gradient(135deg, var(--color-pink), var(--color-beige));
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.app-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-dark-brown);
+    margin-bottom: var(--spacing-xs);
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-brown);
+    opacity: 0.9;
+}
+
+/* ===== Products Section ===== */
+.products-section {
+    padding: var(--spacing-md) 0;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tg-theme-text-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* ===== Product Item ===== */
+.product-item {
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-item:active {
+    transform: scale(0.98);
+}
+
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: var(--color-beige);
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+}
+
+.badge-top {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: white;
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #FF6B9D, #C44569);
+    color: white;
+}
+
+.badge-popular {
+    background: linear-gradient(135deg, #A8E6CF, #56AB91);
+    color: white;
+}
+
+.product-details {
+    padding: var(--spacing-md);
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark-brown);
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: var(--color-brown);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brown);
+}
+
+/* ===== Quantity Controls ===== */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--color-pink);
+    color: var(--color-dark-brown);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.qty-btn:active {
+    transform: scale(0.9);
+    background: var(--color-brown);
+    color: white;
+}
+
+.qty-btn.minus {
+    opacity: 0.6;
+}
+
+.qty-display {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-dark-brown);
+}
+
+/* ===== Cart Summary ===== */
+.cart-summary {
+    position: fixed;
+    bottom: 70px;
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cart-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.cart-icon {
+    font-size: 2rem;
+}
+
+.cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-items {
+    font-size: 0.85rem;
+    color: var(--tg-theme-hint-color);
+}
+
+.cart-total {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brown);
+}
+
+/* ===== About Section (Mini) ===== */
+.about-mini {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-beige);
+    margin-top: var(--spacing-xl);
+}
+
+.about-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.about-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark-brown);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: var(--color-brown);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.features-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.feature-tag {
+    background: var(--color-pink);
+    color: var(--color-dark-brown);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ===== Contact Section (Mini) ===== */
+.contact-mini {
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 0.95rem;
+    color: var(--tg-theme-hint-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.social-links-mini {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-cream);
+    color: var(--color-brown);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.social-link:active {
+    transform: scale(0.95);
+    background: var(--color-pink);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-item {
+    animation: fadeIn 0.3s ease;
+}
+
+.product-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.product-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.product-item:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+/* ===== Loading State ===== */
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--tg-theme-hint-color);
+}
+
+/* ===== Empty State ===== */
+.empty-cart {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--tg-theme-hint-color);
+    font-size: 0.95rem;
+}
