@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 BOT_TOKEN = "8237381360:AAG8hJaT5-uFeNyrzSahJH__LJzu1lbkp-0"
 
 # URL вашего Mini App (замените на ваш GitHub Pages URL)
-WEB_APP_URL = "https://YOUR_USERNAME.github.io/cinnarolls/"
+WEB_APP_URL = "https://diyorcheeeek.github.io/Cinnarollsbot/"
 
 # ===== Обработчик команды /start =====
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -114,3 +114,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
