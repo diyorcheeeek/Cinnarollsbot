@@ -13,7 +13,8 @@ tg.enableClosingConfirmation();
 const products = {
     classic: { name: 'Classic Cinnaroll', price: 35000 },
     chocolate: { name: 'Chocolate Cinnaroll', price: 40000 },
-    nutcaramel: { name: 'Nut-Caramel Cinnaroll', price: 45000 }
+    nutcaramel: { name: 'Nut-Caramel Cinnaroll', price: 45000 },
+    meringue: { name: 'Meringue Roll', price: 50000 }
 };
 
 // Корзина покупок
@@ -200,9 +201,10 @@ function sendOrder() {
     // Очищаем корзину
     cart = {};
     saveCart();
+    updateCartUI();
 
-    // Закрываем приложение
-    tg.close();
+    // Показываем уведомление об успехе
+    tg.showAlert('Заказ отправлен! Мы свяжемся с вами в ближайшее время.');
 }
 
 // ===== Применение темы Telegram =====
