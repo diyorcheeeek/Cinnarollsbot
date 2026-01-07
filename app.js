@@ -100,6 +100,11 @@ function updateUI() {
 
     if (count > 0) {
         stickyCart.classList.add('visible');
+
+        // Pulse Animation
+        stickyCart.classList.add('pulse');
+        setTimeout(() => stickyCart.classList.remove('pulse'), 300);
+
         cartCount.textContent = count;
         cartTotal.textContent = total.toLocaleString('ru-RU') + " so'm";
 
@@ -138,8 +143,8 @@ function checkout() {
             id: id,
             name: products[id].name,
             price: products[id].price,
-            qty: cart[id],
-            row_total: products[id].price * cart[id]
+            quantity: cart[id],
+            total: products[id].price * cart[id]
         });
         orderData.total += products[id].price * cart[id];
     }
